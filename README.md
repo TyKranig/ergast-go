@@ -39,6 +39,14 @@ Just import the project into your golang project and run a ``go mod tidy``
 import "github.com/tylerkranig/ergast-api/pkg/api"
 ```
 
+# Makefile
+
+There are a few make commands to help development
+`make generate` ---> will regenerate the oapi-codegen definitions
+`make clean` ---> delete all *.gen.go files, remove the oapi-codegen files
+`make lint` ---> lint go code with golangci-lint as well as the yaml file for ergast with spectral
+`make format` ---> formats go source code
+
 # Usage
 
 To call the api you first need to create a new Client struct
