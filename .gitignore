@@ -19,3 +19,28 @@
 
 # Go workspace file
 go.work
+
+.idea/
+dist/
+.vscode/
+.data/
+**/mocks/
+.build/
+
+.docker*
+coverage.html
+coverage.out
+coverage.xml
+statement.pdf
+.DS_Store
+*.csv
+
+# local env variables if you want
+env.sh
+*.env.json
+
+# Ignore local cache
+.cache
+.gitconfig
+
+.bash_history

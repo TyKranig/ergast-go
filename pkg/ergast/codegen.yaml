@@ -1,0 +1,5 @@
+package: ergast
+generate:
+  client: true
+  models: true
+output: server.gen.go

@@ -1,0 +1,24 @@
+---
+version: 2
+
+registries:
+  ghcr:
+    type: docker-registry
+    url: https://ghcr.io
+    username: DEPENDABOT
+    password: ${{ secrets.SERVICE_ACCOUNT_TOKEN }}
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(github)"
+
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "chore(go)"
