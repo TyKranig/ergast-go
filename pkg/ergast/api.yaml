@@ -48,12 +48,12 @@ paths:
     get:
       tags: 
       - Constructors
-      description: ""
+      description: "the the constructors from a given year"
       operationId: getConstructorsByYear
       parameters:
         - $ref: '#/components/parameters/yearParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -67,12 +67,12 @@ paths:
     get:
       tags:
       - Constructors
-      description: ""
+      description: "get the constructors championsip standings for a given year"
       operationId: getConstructorStandingsByYear
       parameters:
         - $ref: '#/components/parameters/yearParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -86,12 +86,12 @@ paths:
     get:
       tags:
       - Drivers
-      description: ""
+      description: "get driver championship standing for a given year"
       operationId: getDriverStandingsByYear
       parameters:
         - $ref: '#/components/parameters/yearParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -105,12 +105,12 @@ paths:
     get:
       tags:
       - Results
-      description: ""
+      description: "get the race results for a year"
       operationId: getResultsByYear
       parameters:
         - $ref: '#/components/parameters/yearParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -124,13 +124,13 @@ paths:
     get:
       tags:
       - Results
-      description: ""
+      description: "get the results by year for a constructor"
       operationId: getResultsByYearAndConstructor
       parameters:
         - $ref: '#/components/parameters/yearParam'
         - $ref: '#/components/parameters/constructorParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -144,13 +144,13 @@ paths:
     get:
       tags:
       - Results
-      description: ""
+      description: "get the results of a particular round during a certain year"
       operationId: getResultsByYearAndRound
       parameters:
         - $ref: '#/components/parameters/yearParam'
         - $ref: '#/components/parameters/roundParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -161,12 +161,12 @@ paths:
     get:
       tags:
         - Drivers
-      description: ""
+      description: "get drivers by year"
       operationId: getDriversByYear
       parameters:
         - $ref: '#/components/parameters/yearParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -177,10 +177,10 @@ paths:
     get:
       tags:
         - Drivers
-      description: ""
+      description: "get all formula 1 drivers"
       operationId: getAllDrivers
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -194,12 +194,12 @@ paths:
     get:
       tags:
       - Schedule
-      description: ""
+      description: "get season schedule by year"
       operationId: getSeasonByYear
       parameters:
         - $ref: '#/components/parameters/yearParam'
       responses:
-        200:
+        "200":
           description: ""
           content:
             application/json:
@@ -213,90 +213,89 @@ components:
       properties:
         circuitId:
           type: string
-          example: yas_marina        
+          example: "yas_marina"        
         round:
           type: string
-          example: 21
+          example: "21"
         url:
           type: string
-          example: http://en.wikipedia.org/wiki/Yas_Marina_Circuit          
+          example: "http://en.wikipedia.org/wiki/Yas_Marina_Circuit"          
         circuitName:
           type: string
-          example: Yas Marina Circuit
+          example: "Yas Marina Circuit"
         Location:
           type: object
           properties:
             lat: 
               type: string
-              example: 24.4672
+              example: "24.4672"
             long:
               type: string
-              example: 54.6031
+              example: "54.6031"
             locality:
               type: string
-              example: Abu Dhabi
+              example: "Abu Dhabi"
             country:
               type: string
-              example: UAE
+              example: "UAE"
     Constructor:
       type: object
       properties:
         constructorId:
           type: string
-          example: mercedes
+          example: "mercedes"
         url:
           type: string
-          example: http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One
+          example: "http://en.wikipedia.org/wiki/Mercedes-Benz_in_Formula_One"
         name:
           type: string
-          example: Mercedes
+          example: "Mercedes"
         nationality:
           type: string
-          example: German
+          example: "German"
     Driver:
       type: object
       properties:
         driverId:
           type: string
-          example: hamilton
+          example: "hamilton"
         permanentNumber: 
           type: string
-          example: 44
+          example: "44"
         code:
           type: string
-          example: HAM
+          example: "HAM"
         url:
           type: string
-          example: http://en.wikipedia.org/wiki/Lewis_Hamilton          
+          example: "http://en.wikipedia.org/wiki/Lewis_Hamilton"         
         givenName:
           type: string
-          example: Lewis
+          example: "Lewis"
         familyName:
           type: string
-          example: Hamilton
+          example: "Hamilton"
         dateOfBirth: 
           type: string
           example: "1985-01-07"
         nationality:
           type: string
-          example: British
+          example: "British"
     Race:
       type: object
       properties:
         season:
           type: string
-          example: 2019        
+          example: "2019"        
         round:
           type: string
-          example: 21
+          example: "21"
         url:
           type: string
-          example: https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix          
+          example: "https://en.wikipedia.org/wiki/2019_Abu_Dhabi_Grand_Prix"          
         raceName:
           type: string
-          example: Abu Dhabi Grand Prix
+          example: "Abu Dhabi Grand Prix"
         Circuit:
-          type: object
           $ref:  "#/components/schemas/Circuit"
         date: 
           type: string
@@ -313,37 +312,35 @@ components:
       properties:
         number:
           type: string
-          example: 44   
+          example: "44"   
         position:
           type: string
-          example: 1   
+          example: "1"   
         positionText:
           type: string
-          example: 1                          
+          example: "1"                          
         points:
           type: string
-          example: 26   
+          example: "26"   
         Driver:
-          type: object
           $ref:  "#/components/schemas/Driver"
         Constructor:
-          type: object
           $ref:  "#/components/schemas/Constructor" 
         grid:
           type: string
-          example: 1              
+          example: "1"              
         laps:
           type: string
-          example: 55
+          example: "55"
         status:
           type: string
-          example: Finished
+          example: "Finished"
         Time:
           type: object
           properties:
             millis: 
               type: string
-              example: 5645715
+              example: "5645715"
             time:
               type: string
               example: '1:34:05.715'
@@ -352,10 +349,10 @@ components:
           properties:
             rank: 
               type: string
-              example: 1
+              example: "1"
             lap:
               type: string
-              example: 53
+              example: "53"
             Time:
               type: object
               properties:
@@ -367,10 +364,10 @@ components:
               properties:
                 units:
                   type: string
-                  example: kph              
+                  example: "kph"              
                 speed:
                   type: string
-                  example: 201.387
+                  example: "201.387"
     
     ConstructorsByYearResponse:
       type: object
@@ -386,13 +383,13 @@ components:
               type: string
             limit: 
               type: string
-              example: 30
+              example: "30"
             offset:
               type: string
-              example: 0
+              example: "0"
             total:
               type: string
-              example: 20
+              example: "20"
             ConstructorTable:
               type: object
               properties:
@@ -416,13 +413,13 @@ components:
               type: string
             limit: 
               type: string
-              example: 30
+              example: "30"
             offset:
               type: string
-              example: 0
+              example: "0"
             total:
               type: string
-              example: 20
+              example: "20"
             StandingsTable:
               type: object
               properties:
@@ -451,7 +448,6 @@ components:
                             wins:
                               type: string
                             Constructor:
-                              type: object 
                               $ref: '#/components/schemas/Constructor'
 
     DriversResponse:
@@ -468,20 +464,19 @@ components:
               type: string
             limit:
               type: string
-              example: 30
+              example: "30"
             offset:
               type: string
-              example: 0
+              example: "0"
             total:
               type: string
-              example: 20
+              example: "20"
             DriverTable:
               type: object
               properties:
                 Drivers:
                   type: array
                   items:
-                    type: object
                     $ref: '#/components/schemas/Driver'
 
     DriverStandingsByYearResponse:
@@ -498,13 +493,13 @@ components:
               type: string
             limit: 
               type: string
-              example: 30
+              example: "30"
             offset:
               type: string
-              example: 0
+              example: "0"
             total:
               type: string
-              example: 20
+              example: "20"
             StandingsTable:
               type: object
               properties:
@@ -533,10 +528,8 @@ components:
                             wins:
                               type: string
                             Driver:
-                              type: object
                               $ref: '#/components/schemas/Driver'
                             Constructors:
-                              type: array
                               items:
                                 $ref: '#/components/schemas/Constructor'
     ResultsByYearResponse:
@@ -553,13 +546,13 @@ components:
               type: string
             limit: 
               type: string
-              example: 30
+              example: "30"
             offset:
               type: string
-              example: 0
+              example: "0"
             total:
               type: string
-              example: 20
+              example: "20"
             RaceTable:
               type: object
               properties:
@@ -586,13 +579,13 @@ components:
               type: string
             limit: 
               type: string
-              example: 30
+              example: "30"
             offset:
               type: string
-              example: 0
+              example: "0"
             total:
               type: string
-              example: 20        
+              example: "20"        
             RaceTable:
               type: object
               properties:
@@ -629,7 +622,7 @@ components:
         required: true
         schema:  
           type: string
-          example: mercedes
+          example: "mercedes"
 
     yearParam:
         name: year
@@ -638,7 +631,7 @@ components:
         required: true
         schema:  
           type: string
-          example: 2019
+          example: "2019"
     roundParam:
       name: round
       in: path
@@ -646,5 +639,5 @@ components:
       required: true
       schema:  
         type: string
-        example: 1
+        example: "1"
               
