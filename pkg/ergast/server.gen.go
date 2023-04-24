@@ -97,12 +97,12 @@ type DriverStandingsByYearResponse struct {
 		StandingsTable *struct {
 			StandingsLists *[]struct {
 				DriverStandings *[]struct {
-					Constructors *[]Constructor `json:"Constructors,omitempty"`
-					Driver       *Driver        `json:"Driver,omitempty"`
-					Points       *string        `json:"points,omitempty"`
-					Position     *string        `json:"position,omitempty"`
-					PositionText *string        `json:"positionText,omitempty"`
-					Wins         *string        `json:"wins,omitempty"`
+					Constructors *interface{} `json:"Constructors,omitempty"`
+					Driver       *Driver      `json:"Driver,omitempty"`
+					Points       *string      `json:"points,omitempty"`
+					Position     *string      `json:"position,omitempty"`
+					PositionText *string      `json:"positionText,omitempty"`
+					Wins         *string      `json:"wins,omitempty"`
 				} `json:"DriverStandings,omitempty"`
 				Round  *string `json:"round,omitempty"`
 				Season *string `json:"season,omitempty"`
